@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+	<title> Buy Now</title>
+	<meta name='viewport' content="width=device-width initial-scale=1" >
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+  
+
+</head>
+<body onload="disable_button_in_2_min()">
+         <nav class="navbar navbar-inverse">
+           <div class="container-fluid">
+         	<div class="navbar-header"><a class="navbar-brand" href="home.html">Shopping cart</a></div>
+         	<ul class="nav navbar-nav">
+         	<li><a href="home.html">Home</a></li>
+         	<li  class="active"><a href="buynow.html">Buy Now</a></li>
+         	</ul>
+         	</div>
+         </nav>
+     <div class="row">
+         <div class="col-lg-6">
+          <img src="images/pic1.jpg" class="img-rounded float-left">           
+         </div>
+
+         <div class="col-lg-6">
+                 <li><h1>Timer-----------</h1><br><h2><small><p id="demo"></p></small></h2>
+                 </li>
+                 <li><h1>Product Quantity-</h1><h2><small><p id="qq"><input type="text" id="field1" value="10"></p></small></h2></li>
+             </ul>
+             <button type="button" id="bt" class="btn btn-primary active" onclick="reduceby2()">Buy Now</button>
+         </div>
+
+  <script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+
+<script type="text/javascript">
+    function reduceby2()
+    {
+        var p=parseInt(document.getElementById("field1").value);
+        var q=p-1;
+                document.getElementById("field1").value=q;
+                if (q<=0) 
+                {
+                   document.getElementById("bt").disabled=true;
+                }     
+    }
+</script>
+
+
+<script>
+function disable_button_in_2_min()
+ {
+    var d = new Date();
+    var m = parseInt(d.getMinutes());
+    var c=1;
+    
+  // const mt=m+1;
+    
+     var tt=setInterval(function(){timer()},1000);
+     function timer()
+     {
+       if (c==120) {
+        document.getElementById("bt").disabled=true;
+       }
+       else
+       {
+        c++;
+       }
+       
+
+     /* var ds = new Date();
+    var ms =parseInt(d.getMinutes());
+           echo(ms);
+           
+         if (ms==(m+2)) 
+        { 
+            document.getElementById("bt").disabled=true;
+        }*/
+    }
+
+}
+</script>
+     </div>
+
+  </body>
+  </html>       
