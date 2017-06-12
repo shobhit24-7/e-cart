@@ -26,8 +26,11 @@
                  <li><h1>Timer-----------</h1><br><h2><small><p id="demo"></p></small></h2>
                  </li>
                  <li><h1>Product Quantity-</h1><h2><small><p id="qq"><input type="text" id="field1" value="10"></p></small></h2></li>
+
              </ul>
              <button type="button" id="bt" class="btn btn-primary active" onclick="reduceby2()">Buy Now</button>
+
+             <h3><p>Time left to Click on Buy Now button(in seconds)=<small><p id="timer"></p></small><p></h3>
          </div>
 
   <script>
@@ -39,28 +42,24 @@ document.getElementById("demo").innerHTML = d;
     function reduceby2()
     {
         var p=parseInt(document.getElementById("field1").value);
-        var q=p-1;
-                document.getElementById("field1").value=q;
-                if (q<=0) 
+        p=p-1;
+                document.getElementById("field1").value=p;
+                if (p<=0) 
                 {
                    document.getElementById("bt").disabled=true;
                 }     
     }
 </script>
-
-
+	
 <script>
 function disable_button_in_2_min()
  {
-    var d = new Date();
-    var m = parseInt(d.getMinutes());
+   
     var c=1;
-    
-  // const mt=m+1;
-    
      var tt=setInterval(function(){timer()},1000);
      function timer()
      {
+        document.getElementById("timer").innerHTML=c;
        if (c==120) {
         document.getElementById("bt").disabled=true;
        }
@@ -68,16 +67,6 @@ function disable_button_in_2_min()
        {
         c++;
        }
-       
-
-     /* var ds = new Date();
-    var ms =parseInt(d.getMinutes());
-           echo(ms);
-           
-         if (ms==(m+2)) 
-        { 
-            document.getElementById("bt").disabled=true;
-        }*/
     }
 
 }
