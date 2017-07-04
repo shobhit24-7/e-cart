@@ -1,0 +1,3 @@
+the timer is in increasing fashion, what you can do is use the timeout function of javascript, you will get the thing done.
+
+Any help, do text me .
